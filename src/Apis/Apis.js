@@ -1,2 +1,2 @@
 export const URL = "https://api.thecatapi.com/v1/images/search?limit=2";
-export const URLFavourite = "https://api.thecatapi.com/v1/favourites";
+export const URLFavourite = "https://api.thecatapi.com/v1/favourites?api_key=live_rSg4pIw2MTpkzS1jQ7k7D7a4DshHbRT9xkYFDNE08CWPGajmgocwIamxUKjpPqlf";
