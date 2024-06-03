@@ -42,7 +42,8 @@
   padding: 16px;
 }
 
-.cardCats, .cardFavourites  {
+.cardCats,
+.cardFavourites {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -117,17 +118,15 @@ img {
   color: rgba(128, 128, 128, 0.904);
 }
 
-
-img:hover{
-       border: 2px solid hsl(0, 100%, 70%);
-       border-radius: 1rem;
-       box-shadow: none;
-       color: #ffff;
-       font-size: 1rem;
-       font-weight: 600;
-       cursor: pointer;
-       
-   }
+img:hover {
+  border: 2px solid hsl(0, 100%, 70%);
+  border-radius: 1rem;
+  box-shadow: none;
+  color: #ffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 @media (max-width: 1024px) {
   .card {
