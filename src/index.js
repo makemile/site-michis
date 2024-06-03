@@ -1,6 +1,40 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { URL } from "./Apis/Apis";
+import { URLFavourite } from "./Apis/Apis";
+const container = document.querySelector("#containerCat");
+const sectionCard = document.querySelector(".card");
+const btnReload = document.querySelector(".btnReload");
 
-console.log('Happy hacking :)')
+const getData = async () => {
+  try {
+    let render = [];
+    let response = await fetch(URL);
+    let cats = await response.json();
+
+    cats.forEach((cats, index) => {
+      let article = document.createElement("article");
+      article.classList.add("item_card");
+      let image = document.createElement("img");
+      let btnFavourite = document.createElement("button");
+      let footer = document.createElement("footer");
+      let span = document.createElement("span");
+      span.setAttribute("data-tooltip", "Agregar favoritos ♥");
+      btnFavourite.classList.add("btnFavourite");
+      footer.className = "footer";
+      console.log(cats);
+      image.src = cats.url;
+      image.alt = cats.name;
+      btnFavourite.id = cats.id;
+      btnFavourite.type = "button";
+      btnFavourite.textContent = "+";
+      span.append(btnFavourite);
+      footer.append(span);
+      article.append(image, footer);
+      render.push(article);
+    });
+    sectionCard.append(...render);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+getData();

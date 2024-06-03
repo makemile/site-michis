@@ -1,3 +1,163 @@
-@import 'tailwindcss/dist/base.css';
-@import 'tailwindcss/dist/components.css';
-@import 'tailwindcss/dist/utilities.css';
+@import "tailwindcss/dist/base.css";
+@import "tailwindcss/dist/components.css";
+@import "tailwindcss/dist/utilities.css";
+
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::after {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  content: attr(data-tooltip);
+  right: 4px;
+  top: calc(100% + -89px);
+  border-radius: 3px;
+  box-shadow: 0 0 5px 2px rgba(100, 100, 100, 0.6);
+  background-color: white;
+  z-index: 10;
+  padding: 8px;
+  width: 155px;
+  transform: translateY(-20px);
+  transition: all 150ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 300ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#containerCat {
+  display: grid;
+  justify-items: center;
+  padding: 16px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.item_card {
+  display: grid;
+  gap: 0.5rem;
+  border-color: #ced4da;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: 1rem;
+}
+
+img {
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 300px;
+  height: 300px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.3rem;
+}
+
+.btnReload {
+  background-color: white;
+  border: 2px solid #ffcc00;
+  border-radius: 0;
+  box-shadow: none;
+  width: 20rem;
+  height: 2rem;
+  cursor: pointer;
+  background-color: rgb(204, 153, 255);
+  border-color: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px -5px 15px hsl(270deg 100% 85% / 0.5),
+    -5px 5px 15px hsl(270deg 100% 55% / 0.5);
+  color: black;
+  font-size: 1rem;
+}
+
+.btnFavourite,
+.btnFavourite:hover {
+  background-color: #66cccc00;
+  border: 2px solid #111111;
+  border-radius: 90px;
+  box-shadow: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  bottom: 21px;
+  color: #0a0a0a;
+  font-weight: 800;
+}
+
+.btnFavourite:hover {
+  background: hsl(72, 26%, 96%);
+  border: 2px solid hsl(0, 100%, 70%);
+  color: rgba(128, 128, 128, 0.904);
+}
+
+
+img:hover{
+       border: 2px solid hsl(0, 100%, 70%);
+       border-radius: 1rem;
+       box-shadow: none;
+       color: #ffff;
+       font-size: 1rem;
+       font-weight: 600;
+       cursor: pointer;
+       
+   }
+
+@media (max-width: 1024px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+/* @media screen and (max-width: 992px){
+       .card{
+          grid-template-columns: repeat(2, 1fr);
+       }
+    } */
+
+.button {
+  background-color: white;
+  border: 2px solid #ff6666;
+  border-radius: 0;
+  box-shadow: none;
+  width: 8rem; /* adjust as required */
+  height: 4rem; /* adjust as required */
+}
+
+.button:hover {
+  background: hsl(0deg 100% 60%);
+  border: 2px solid hsl(0deg 100% 60%);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.button:disabled {
+  background-color: white;
+  border-radius: 0;
+  color: #bea7a7;
+}
